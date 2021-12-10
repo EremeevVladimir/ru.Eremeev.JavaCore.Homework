@@ -133,7 +133,15 @@ public class Lesson_2 {
      * отрицательным), при этом метод должен сместить все элементы массива на n позиций. Элементы смещаются
      * циклично. Для усложнения задачи нельзя пользоваться вспомогательными массивами.
      */
-    static void doExercise7 (int[]array, int n) {
+    static void doExercise7 (int[]arr, int n) {
+        int shift = (arr.length + n % arr.length) % arr.length;
+            for (int i=0; i<shift; i++) {
+                int temp = arr [arr.length-1];
+                for (int j = arr.length - 1; j > 0; j--) {
+                    arr [j] = arr[j - 1];
+                }
+                arr [0] = temp;
+            }
 
 
     }
